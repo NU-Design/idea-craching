@@ -1,4 +1,4 @@
-import ReactMarkDownDemo from "./react_mark_down_demo";
+import ReactMarkDownDemo from "./common/components/react_mark_down_demo";
 
 const App = () => {
 
