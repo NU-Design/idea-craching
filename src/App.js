@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactMarkDownDemo from "./react_mark_down_demo";
 
-function App() {
+const App = () => {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="ideaboxes-container ">
+      <div className="ideabox-container">
+        <div className="ideabox-body-container">
+          {/*<img />*/}
+          <div className="ideabox-container">
+            <h2> title </h2>
+            <p>descreption</p>
+          </div>
+        </div>
+      </div>
+      <div className="ideabox-container">
+        <div className="ideabox-body-container">
+          {/*<img />*/}
+          <div className="ideabox-container">
+            <h2> title </h2>
+            <p>descreption</p>
+          </div>
+        </div>
+      </div>
+      <div className="ideabox-container">
+        <div className="ideabox-body-container">
+          {/*<img />*/}
+          <div className="ideabox-container">
+            <h2> title </h2>
+            <p>descreption</p>
+          </div>
+        </div>
+      </div>
+      <div className="ideabox-container">
+        <div className="ideabox-body-container">
+          {/*<img />*/}
+          <div className="ideabox-container">
+            <h2> title </h2>
+            <p>descreption</p>
+          </div>
+        </div>
+      </div>
+      <ReactMarkDownDemo />
     </div>
   );
 }
