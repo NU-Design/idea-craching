@@ -42,7 +42,8 @@ const SignIn = () => {
   //state = {};
 
   return (
-    <Base>
+    <div style={{ marginTop: '15px', backgroundColor: '#FFF8F8' }}>
+              
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2} columns={17} sx={{ height: '100vh' }}>
           <CssBaseline />
@@ -109,7 +110,7 @@ const SignIn = () => {
           </Grid>
         </Grid>
       </Box>
-    </Base>
+    </div>
   );
 };
 
