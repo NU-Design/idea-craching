@@ -45,16 +45,7 @@ export const connectIdeas2 = async () => {
     console.log("Document data:", docSnap.data());
     return 0;
   } else {
-    // doc.data() will be undefined in this case
     console.log("No such document!");
     return -1;
   }
-
-  // const q = query(collection(db, 'ideas'), where(documentId(), "==", "h8WAnPAHfhSgYlObbb6C"));
-
-  // const querySnapshot = await getDoc(q);
-  // querySnapshot.forEach((doc) => {
-  //   console.log(doc.id, ' => ', doc.data());
-  // });
-
 } ;

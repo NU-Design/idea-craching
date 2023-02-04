@@ -12,12 +12,21 @@ import { connectIdeas, connectIdeas2 } from '../common/utils/firebase/firebase.u
 //   // });
 // });
 
-test("Get ideas by user id", async () => {
-  let res = await getIdeasByUserId();
-  console.log("result", res);
-  expect(res).toBe(-1);
-});
 
+
+// test("Get idea by idea_id", async () => {
+//   const ideaId = "h8WAnPAHfhSgYlObbb6C";
+//   let res = await getIdeaByIdeaId(ideaId);
+//   console.log("result_2", res);
+//   expect(res).not.toBe(null);
+// });
+
+test("Get ideas by user_id", async () => {
+  const userId = "WC5VhHcQYJ4G96OzuoGw";
+  let res = await getIdeasByUserId(userId);
+  console.log("result_1", res);
+  expect(res).not.toBe(null);
+});
 
 // test("Test 111", async () => {
 //   let res = await connectIdeas();
