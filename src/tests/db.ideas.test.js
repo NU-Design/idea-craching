@@ -1,28 +1,29 @@
 import { getIdeaByIdeaId, getIdeasByUserId, getIdeasByAncestorId, addIdea } from '../common/services/db/ideas';
 import { connectIdeas, connectIdeas2 } from '../common/utils/firebase/firebase.util';
-import { Timestamp, FieldValue } from 'firebase/firestore';
 
 // test("Add an idea", async () => {
 //   const data = {
-//     // timestamp: FieldValue.serverTimestamp(),
-//     title: "Test Title",
+//     title: "Test Title 222",
 //     brief: "This is a brief oh",
 //     media: {
-//       name: "media name", 
+//       name: "media name",
 //       type: "image",
 //       source: {
 //         url: "NOT A URL",
 //       }
 //     },
 //     details: "ideaDetail_id FAKE",
-//     parent: "PARENT", 
-//     ancestor: "ANCESTOR_ID", 
+//     author: "neOMQadmXDU3Ne5SBzm8cr0k25A2",
+//     parent: "PARENT",
+//     ancestor: "ANCESTOR_ID",
 //     likes: 8,
 //     reposts: 1
 //   };
-
-//   const res = await addIdea(null, data);
-//   console.log("add_result", res);
+//   const content = `Proin tincidunt ac ipsum sed fermentum. Maecenas mattis in nunc non placerat. Phasellus quis convallis lacus. Donec molestie a turpis non congue. Nulla vel volutpat erat. Donec vestibulum.`;
+//   const userRole = "developer";
+  
+//   const res = await addIdea(data, content, userRole);
+//   console.log("idea_id = ", res.id);
 //   expect(res).not.toBe(null);
 // });
 
@@ -61,3 +62,7 @@ import { Timestamp, FieldValue } from 'firebase/firestore';
 //   console.log("result 222", res);
 //   expect(res).toBe(0);
 // });
+
+test("Dummy Test", async () => {
+  return true;
+});
