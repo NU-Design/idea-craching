@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import React, { Component } from 'react';
-import Base from '../base_outline/base';
 import ResponsiveAppBar from '../navbar/ResponsiveAppBar';
 
 class Post extends Component {
@@ -17,4 +14,3 @@ class Post extends Component {
 }
  
 export default Post;
->>>>>>> will
