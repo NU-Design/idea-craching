@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import ResponsiveAppBar from './pages/ResponsiveAppBar';
+import RecipeReviewCard from './common/components/PostCard';
+
 
 class App extends Component {
   state = {  } 
   render() { 
     return (
-      <React.Fragment>
-        <ResponsiveAppBar />
-      </React.Fragment>
+      <div>
+        <React.Fragment>
+          <ResponsiveAppBar />
+        </React.Fragment>
+        <RecipeReviewCard/>
+      </div>
     );
   }
 }
