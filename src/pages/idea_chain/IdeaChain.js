@@ -34,9 +34,14 @@ function IdeaChain() {
       },
     },
   ];
+
   return (
     <div style={{ width: '500px', height: '900px' }}>
-      <Chrono items={items} />
+      <Chrono items={items}>
+        <div><hr />
+            <h3>Title</h3>Just a test card
+        </div>
+      </Chrono>
     </div>
   );
 }
