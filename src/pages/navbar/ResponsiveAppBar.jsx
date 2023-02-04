@@ -43,25 +43,22 @@ function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const [username, setUsername] = React.useState("");
+  const [username, setUsername] = React.useState('');
   useEffect(() => {
     const uid = auth.currentUser.uid;
-    console.log("uid", uid);
+    console.log('uid', uid);
 
-const fetchdata = async () => {
-    console.log('in data');
-    const result = await GetUserbyId(uid);
-    console.log(result.username);
-    setUsername(result.username);
-  };
+    const fetchdata = async () => {
+      console.log('in data');
+      const result = await GetUserbyId(uid);
+      console.log(result.username);
+      setUsername(result.username);
+    };
 
-  fetchdata();
+    fetchdata();
 
-  console.log("uusr", username);
-
-  },[]  );
-
-  
+    console.log('uusr', username);
+  }, []);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -87,7 +84,7 @@ const fetchdata = async () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            // href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -100,7 +97,6 @@ const fetchdata = async () => {
           >
             Idea Crashing
           </Typography>
-
           <Box
             sx={{
               flexGrow: 1,
@@ -136,11 +132,65 @@ const fetchdata = async () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+                  <Grid item xs={10}>
+                    <Item
+                      sx={{
+                        boxShadow: 0,
+                      }}
+                    >
+                      <Link
+                        style={{
+                          color: '"#FFF8F8"',
+                          textDecoration: 0,
+                          // paddingLeft: '20px',
+                        }}
+                        to="/home"
+                      >
+                        HOME
+                      </Link>
+                    </Item>
+                  </Grid>
+                  <Grid item xs={10}>
+                    <Item
+                      sx={{
+                        boxShadow: 0,
+                      }}
+                    >
+                      <Link
+                        style={{
+                          color: '"#FFF8F8"',
+                          textDecoration: 0,
+                          // paddingLeft: '20px',
+                        }}
+                        to="/idea_chain"
+                      >
+                        IDEA CHAIN
+                      </Link>
+                    </Item>
+                  </Grid>
+
+                  <Grid item xs={10}>
+                    <Item
+                      sx={{
+                        boxShadow: 0,
+                      }}
+                    >
+                      <Link
+                        style={{
+                          color: '"#FFF8F8"',
+                          textDecoration: 0,
+                          // paddingLeft: '20px',
+                        }}
+                        to="/about_us"
+                      >
+                        ABOUT US
+                      </Link>
+                    </Item>
+                  </Grid>
+                </Grid>
+              </Box>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -148,7 +198,7 @@ const fetchdata = async () => {
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            // href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -180,6 +230,13 @@ const fetchdata = async () => {
               to="/about_us"
             >
               ABOUT US
+            </Link>
+
+            <Link
+              style={{ color: 'white', textDecoration: 0, paddingLeft: '20px' }}
+              to="/hjx"
+            >
+              hjx
             </Link>
           </Box>
 
