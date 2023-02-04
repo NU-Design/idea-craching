@@ -20,6 +20,7 @@ import Paper from '@mui/material/Paper';
 import { signOutUser, auth } from '../../common/services/db/auth';
 import { async } from '../../common/utils/firebase/firebase.util';
 import { GetUserbyId } from '../../common/services/db/users';
+import MarkdownViewer from '../markdown_viewer/MarkdownViewer';
 
 const pages = ['HOME', 'IDEA CHAIN', 'ABOUT US'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -241,7 +242,7 @@ function ResponsiveAppBar() {
               style={{ color: 'white', textDecoration: 0, paddingLeft: '20px' }}
               to="/hjx"
             >
-              hjx
+              EDITOR
             </Link>
           </Box>
 
