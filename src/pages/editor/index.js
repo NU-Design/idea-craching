@@ -1,11 +1,11 @@
 import ResponsiveAppBar from "../navbar/ResponsiveAppBar";
 
-const AboutUs = () => {
+const Editor = () => {
     return (
         <>
           <ResponsiveAppBar />
-          <div>Some Demo Text About US</div>
+          <div>Some Demo Text Editor</div>
         </>
       );};
 
-export default AboutUs;
+export default Editor;
