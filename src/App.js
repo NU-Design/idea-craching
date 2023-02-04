@@ -6,7 +6,7 @@ import MarkdownViewer from './pages/markdown_viewer/MarkdownViewer';
 import MonacoEditor from './pages/monaco_editor/MonacoEditor';
 import Post from './pages/post/post';
 import SignUp from './pages/signup/signUp';
-import Home from './pages/home/home';
+import Home from './pages/home/index';
 import AboutUs from './pages/about_us';
 import Editor from './pages/editor/index';
 import SignIn from './pages/sign_in/combined';
