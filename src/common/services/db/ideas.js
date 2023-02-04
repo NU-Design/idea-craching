@@ -77,6 +77,14 @@ export const getIdeaByIdeaId = async (ideaId) => {
   }
 };
 
+export const getAllIdeas = async () => {
+  const coll = collection(db, "ideas");
+  const snap = await getDocs(coll);
+
+  const ideas = snap.docs.map(doc => doc.data());
+  return ideas;
+};
+
 // Return all ideas created by a user
 export const getIdeasByUserId = async (userId) => {  
   const q = query(collection(db, 'ideas'), where('user_id', '==', userId));
