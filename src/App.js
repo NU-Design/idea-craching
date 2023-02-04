@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ResponsiveAppBar from './pages/ResponsiveAppBar';
-import RecipeReviewCard from './common/components/PostCard';
+import PostCard from './common/components/PostCard';
 
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
         <React.Fragment>
           <ResponsiveAppBar />
         </React.Fragment>
-        <RecipeReviewCard/>
+        <PostCard/>
       </div>
     );
   }
