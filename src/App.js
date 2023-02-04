@@ -20,14 +20,14 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/idea_chain_test" element={<IdeaChain />} />
-          <Route path="/about_us_test" element={<AboutUs />} />
-          <Route path="/editor_test" element={<Editor />} />
+          <Route path="/idea_chain" element={<IdeaChain />} />
+          <Route path="/about_us" element={<AboutUs />} />
+          <Route path="/editor" element={<Editor />} />
           <Route path="/home" element={<Home />} />
           <Route path="/sign_in" element={<SignIn />} />
-          <Route path="/profile_test" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/sign_up" element={<SignUp />} />
-          <Route path="/post_test" element={<Post />} />
+          <Route path="/post" element={<Post />} />
           <Route path="/hjx" element={<HJXTest />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>

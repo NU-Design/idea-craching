@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,7 +17,9 @@ import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import { signOutUser } from '../../common/services/db/auth';
+import { signOutUser, auth } from '../../common/services/db/auth';
+import { async } from '../../common/utils/firebase/firebase.util';
+import { GetUserbyId } from '../../common/services/db/users';
 
 const pages = ['HOME', 'IDEA CHAIN', 'ABOUT US'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -28,9 +31,37 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+const ItemUser = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1976d2' : '#1976d2',
+  ...theme.typography.body2,
+  padding: theme.spacing(0),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const [username, setUsername] = React.useState("");
+  useEffect(() => {
+    const uid = auth.currentUser.uid;
+    console.log("uid", uid);
+
+const fetchdata = async () => {
+    console.log('in data');
+    const result = await GetUserbyId(uid);
+    console.log(result.username);
+    setUsername(result.username);
+  };
+
+  fetchdata();
+
+  console.log("uusr", username);
+
+  },[]  );
+
+  
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -134,19 +165,19 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Link
               style={{ color: 'white', textDecoration: 0, paddingLeft: '20px' }}
-              to="/home_test"
+              to="/home"
             >
               HOME
             </Link>
             <Link
               style={{ color: 'white', textDecoration: 0, paddingLeft: '20px' }}
-              to="/idea_chain_test"
+              to="/idea_chain"
             >
               IDEA CHAIN
             </Link>
             <Link
               style={{ color: 'white', textDecoration: 0, paddingLeft: '20px' }}
-              to="/about_us_test"
+              to="/about_us"
             >
               ABOUT US
             </Link>
@@ -155,7 +186,14 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <ItemUser
+                  sx={{
+                    boxShadow: 0,
+                    color: 'white',
+                  }}
+                >
+                  <h2>{username}</h2>
+                </ItemUser>
               </IconButton>
             </Tooltip>
             <Menu
@@ -187,7 +225,7 @@ function ResponsiveAppBar() {
                           color: 'black',
                           textDecoration: 0,
                         }}
-                        to="/profile_test"
+                        to="/profile"
                       >
                         Profile
                       </Link>
