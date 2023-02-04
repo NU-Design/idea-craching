@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import ResponsiveAppBar from './pages/ResponsiveAppBar';
-import PostCard from './common/components/PostCard';
+import RecipeReviewCard from './common/components/PostCard';
 
 
 class App extends Component {
   state = {  } 
-  render() { 
+  render() {
     return (
       <div>
         <React.Fragment>
           <ResponsiveAppBar />
         </React.Fragment>
-        <PostCard/>
+        <RecipeReviewCard props = {true}/>
       </div>
     );
   }

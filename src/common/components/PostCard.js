@@ -1,36 +1,111 @@
 // import StartFunctionOnClick from "./on_click";
-import React from "react";
 
 
-const PostCard = () => {
 
-    return (
-        <div class="card" style="width: 18rem;">
-            
-            <div className="row">
-                <div className="col-3">
-                    <p> row for avatar</p>
-                </div>
-                <div className="col-9">
-                    <div className="row">
-                        <p>row for username</p>
-                    </div>
-                    <div className="row">
-                        <p>row for user comment</p>
-                    </div>
-                </div>
-            </div>
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Collapse from '@mui/material/Collapse';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { red } from '@mui/material/colors';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+// import ShareIcon from '@mui/icons-material/Share';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-            <div className="row">
-                <p> icons and view more</p>
-            </div>
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
-            <div className="row card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    );
+export default function RecipeReviewCard() {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = (isImage) => {
+    setExpanded(!expanded);
+  };
+
+
+
+//   let media = "";
+//   if (isImage === true) {
+//     media = "img";
+//   } else {
+//     media = "iframe"
+//   }
+
+
+
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardHeader
+        avatar={
+            <Avatar alt="Remy Sharp" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/B7F6/production/_128049074_muskgetty.png" />
+        }
+        // action={
+        //   <IconButton aria-label="settings">
+        //     <MoreVertIcon />
+        //   </IconButton>
+        // }
+        title="@username"
+        subheader="comment content"
+      />
+
+      <CardMedia
+        component="img"
+        height="194"
+        image="https://c8.alamy.com/comp/HT2GEG/1995-mitsubishi-lancer-evo-3-artist-unknown-HT2GEG.jpg"
+        alt="alt picture text"
+      />
+      
+
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          This is the article content
+        </Typography>
+      </CardContent>
+
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon
+          sx={{color:red[500]}}/>
+        </IconButton>
+        <p>like:123</p>
+
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+      </CardActions>
+
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>Method:</Typography>
+          <Typography paragraph>
+            222
+          </Typography>
+
+          <Typography>
+            333
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+  );
 }
-
-export default PostCard;
