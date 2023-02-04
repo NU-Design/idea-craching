@@ -1,6 +1,17 @@
 import { initializeApp } from 'firebase/app';
 
-import { getFirestore } from 'firebase/firestore';
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  getDocs,
+  setDoc,
+  collection,
+  writeBatch,
+  where,
+  query,
+  documentId
+} from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -14,4 +25,36 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 
-export const db = getFirestore();
+export const db = getFirestore(firebaseApp);
+
+export const connectIdeas = async () => {
+  const coll = collection(db, 'ideas');
+  const snap = await getDocs(coll);
+  console.log("SNAPPP");
+
+  const ls = snap.docs.map(doc => doc.data());
+  console.log("list", ls);
+  return 0;
+} ;
+
+export const connectIdeas2 = async () => {
+  const docRef = doc(db, "ideas", "h8WAnPAHfhSgYlObbb6C");
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+    return 0;
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+    return -1;
+  }
+
+  // const q = query(collection(db, 'ideas'), where(documentId(), "==", "h8WAnPAHfhSgYlObbb6C"));
+
+  // const querySnapshot = await getDoc(q);
+  // querySnapshot.forEach((doc) => {
+  //   console.log(doc.id, ' => ', doc.data());
+  // });
+
+} ;
