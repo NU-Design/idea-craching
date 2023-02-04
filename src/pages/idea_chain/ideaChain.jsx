@@ -10,29 +10,42 @@ const LOGO =
 const itemsDemo = [
   {
     title: 'Jan 1st 2023',
-    cardTitle: 'Regarding Refactoring Redux',
+    cardTitle: 'AI coder',
     url: LOGO,
-    cardSubtitle: 'I plan to refactor all states into redux states and reducers',
+    cardSubtitle:
+      'Copilot is getting popular. We should make our own AI coding tool. ',
     media: {
       type: 'IMAGE',
       source: {
         url: LOGO,
       },
     },
-    mdText: '# A sample original JavaScript code is shown here:\n\n~~~js\nsetItems(newVal);\nconsole.log("New Value", newVal);\n~~~\n',
+    mdText: `# We need to grab early market shares.
+Time is money.
+~~~js
+  // Without coder
+  console.log(val);
+  // With coder
+  console.log("Current val is:", val);
+~~~`,
   },
   {
     title: 'Jan 24ed 2023',
-    cardTitle: 'I suggest you refactor this way',
+    cardTitle: 'Similar products',
     url: LOGO,
-    cardSubtitle: 'I wrote some code for you.',
+    cardSubtitle: 'I collected some existent similar apps that is out.',
     media: {
       type: 'IMAGE',
       source: {
         url: LOGO,
       },
     },
-    mdText: '# A sample original JavaScript code is shown here：\n\n~~~js\ndispatch(action: "UI/setNewItems", payload(newVal));\nconsole.log("New Value", newVal);\n~~~\n',
+    mdText:
+      `# Here are some of the competitors:
+- Github Copilot
+- Tabnine
+- Captain Stack
+`,
   },
 ];
 
