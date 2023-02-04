@@ -13,7 +13,7 @@ class Base extends Component {
         <div
 
           style={{
-            marginTop: '0px',
+            marginTop: '15px',
             backgroundColor: bg_color,
           }}
         >
