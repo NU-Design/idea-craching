@@ -1,5 +1,12 @@
-// const Home = () => {
-//   return <div>Hello! Here is the homepage!</div>;
-// };
+import ResponsiveAppBar from "../navbar/ResponsiveAppBar";
 
-// export default Home;
+const Home = () => {
+  return (
+    <>
+        <ResponsiveAppBar/>
+        <p>This is a Home page</p>
+    </>
+  );
+};
+
+export default Home;
