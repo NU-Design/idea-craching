@@ -1,6 +1,9 @@
 
 .ideaDetailCard {
   width: 60%;
+  margin:40px auto;
+  display: block;
+  align-items: center;
 }
 
 #imdeaDetailMedia {

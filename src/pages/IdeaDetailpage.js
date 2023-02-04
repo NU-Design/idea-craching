@@ -8,7 +8,7 @@ function IdeaDetailPage() {
   return (
     <div class="container">
       <h1>GGGG</h1>
-      <IdeaDetailCard />
+      <IdeaDetailCard title="My freaking Title"/>
         
     </div>);  
 }

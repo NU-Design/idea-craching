@@ -41,6 +41,7 @@ const App = () => {
             element={<MarkdownViewer markdown="# 123" />}
           />
           <Route path="/details" element={<IdeaDetailPage />} />
+
         </Routes>
       </BrowserRouter>
     </>
