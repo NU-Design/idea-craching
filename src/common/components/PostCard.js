@@ -30,43 +30,30 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = (isImage) => {
+  const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
-
-
-//   let media = "";
-//   if (isImage === true) {
-//     media = "img";
-//   } else {
-//     media = "iframe"
-//   }
-
 
 
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-            <Avatar alt="Remy Sharp" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/B7F6/production/_128049074_muskgetty.png" />
+            <Avatar alt="avartar image" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/B7F6/production/_128049074_muskgetty.png" />
         }
-        // action={
-        //   <IconButton aria-label="settings">
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
+        
         title="@username"
         subheader="comment content"
       />
 
       <CardMedia
-        component="img"
+        component={props.isImage === true ? "img" : "iframe"}
         height="194"
-        image="https://c8.alamy.com/comp/HT2GEG/1995-mitsubishi-lancer-evo-3-artist-unknown-HT2GEG.jpg"
+        //image="https://c8.alamy.com/comp/HT2GEG/1995-mitsubishi-lancer-evo-3-artist-unknown-HT2GEG.jpg"
+        image="https://www.youtube.com/embed/ES--j0LOtaQ"
         alt="alt picture text"
       />
       

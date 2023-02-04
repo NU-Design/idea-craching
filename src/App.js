@@ -6,12 +6,13 @@ import RecipeReviewCard from './common/components/PostCard';
 class App extends Component {
   state = {  } 
   render() {
+    let isImage = false;
     return (
       <div>
         <React.Fragment>
           <ResponsiveAppBar />
         </React.Fragment>
-        <RecipeReviewCard props = {true}/>
+        <RecipeReviewCard isImage={isImage}/>
       </div>
     );
   }
