@@ -16,6 +16,8 @@ import { MarkerSeverity } from 'monaco-editor';
 import Profile from './pages/profile/profile';
 
 
+import IdeaDetailPage from './pages/IdeaDetailpage';
+
 const App = () => {
   return (
     <>
@@ -31,11 +33,14 @@ const App = () => {
           <Route path="/sign_up" element={<SignUp />} />
           <Route path="/post_test" element={<Post />} />
           <Route path="/hjx" element={<Editor />} />
+
           <Route path="/*" element={<SignIn />} />
+
           <Route
             path="/md_test"
             element={<MarkdownViewer markdown="# 123" />}
           />
+          <Route path="/details" element={<IdeaDetailPage />} />
         </Routes>
       </BrowserRouter>
     </>
