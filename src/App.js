@@ -5,8 +5,7 @@ import IdeaChain from './pages/idea_chain/IdeaChain';
 
 import Post from './pages/post/post';
 import SignUp from './pages/signup/signUp';
-
-
+import HJXTest from './common/services/db/hjxTest';
 
 const App = () => {
   return (
@@ -19,7 +18,7 @@ const App = () => {
 
           <Route path="/sign_up_test" element={<SignUp />} />
           <Route path="/post_test" element={<Post />} />
-
+          <Route path="/hjx" element={<HJXTest />} />
         </Routes>
       </BrowserRouter>
     </>
