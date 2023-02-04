@@ -5,12 +5,7 @@ import {
   doc,
   getDoc,
   getDocs,
-  setDoc,
   collection,
-  writeBatch,
-  where,
-  query,
-  documentId
 } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
@@ -30,7 +25,6 @@ export const db = getFirestore(firebaseApp);
 export const connectIdeas = async () => {
   const coll = collection(db, 'ideas');
   const snap = await getDocs(coll);
-  console.log("SNAPPP");
 
   const ls = snap.docs.map(doc => doc.data());
   console.log("list", ls);
