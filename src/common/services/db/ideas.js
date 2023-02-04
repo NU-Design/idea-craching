@@ -3,6 +3,7 @@ import { addIdeaDetail } from './ideaDetails';
 import {
   doc,
   setDoc,
+  updateDoc,
   getDoc,
   getDocs,
   collection,
@@ -77,6 +78,21 @@ export const getIdeaByIdeaId = async (ideaId) => {
   }
 };
 
+
+export const getAncestorByIdeaId = async (ideaId) => {
+  const ref = doc(db, "ideas", ideaId);
+  const snap = await getDoc(ref);
+
+  if (snap.exists()) {
+    // Convert to data object
+    const data = snap.data();
+    return data.ancestor;
+  } else {
+    console.log(`Document with idea_id=${ideaId} not found.`);
+    return null;
+  }
+}
+
 export const getAllIdeas = async () => {
   const coll = collection(db, "ideas");
   const snap = await getDocs(coll);
@@ -119,10 +135,12 @@ export const getIdeasByAncestorId = async(ancestorId) => {
   return ret;
 }
 
-// TODO: Placeholders for now
-export const updateIdea = async () => {
-  return null;
-};
+export const updateIdeaByIdeaId = async (id, data) => {
+  const ref = doc(db, "ideas", id);
+  const res = await setDoc(ref, data, { merge: true });
+
+  return res;
+}
 
 // TODO: Placeholders for now
 export const deleteIdea = async () => {
