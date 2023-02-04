@@ -4,17 +4,27 @@ import ReactMarkdown from 'react-markdown';
 import React from 'react';
 
 // Did you know you can use tildes instead of backticks for code in markdown? ✨
-const markdown = `# Here is some JavaScript code:
+// const markdown = `# Here is some JavaScript code:
 
-~~~js
-console.log('It works!')
-~~~
-`;
+// ~~~js
+// console.log('It works!')
+// jlkj
+// gs
 
-const MarkdownViewer = () => {
+// gsd
+// gs
+// dg
+// sadg
+// asg
+// asdg
+// s
+// ~~~
+// `;
+
+const MarkdownViewer = (props) => {
   return (
     <ReactMarkdown
-      children={markdown}
+      children={props.markdown}
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '');

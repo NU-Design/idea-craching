@@ -47,6 +47,7 @@ const Item = styled(Paper)(({ themeBorder }) => ({
 
 const SignUp = () => {
   const [role, setRole] = React.useState('');
+  const [username, setUsername] = React.useState('');
 
   const handleChange = (event) => {
     const temp = event.target.value;
@@ -58,23 +59,26 @@ const SignUp = () => {
     const data = new FormData(event.currentTarget);
     let additionData = {
       role: role,
-      username: 'username add',
+      username: data.get('username'),
     };
     await createAuthUserWithEmailAndPassword(
       data.get('email'),
       data.get('password'),
+      // data.get('username'),
       additionData,
     );
 
     console.log({
       email: data.get('email'),
       password: data.get('password'),
+      username: data.get('username'),
       confirm_password: data.get('confirm_password'),
       role: role,
     });
 
     const email = data.get('email');
     const password = data.get('password');
+    const username = data.get('username');
     const confirm_password = data.get('confirm_password');
   };
 
@@ -169,6 +173,15 @@ const SignUp = () => {
                         noValidate
                         sx={{ mt: 1 }}
                       >
+                        <TextField
+                          margin="normal"
+                          required
+                          fullWidth
+                          name="username"
+                          label="Username"
+                          type="username"
+                          id="username"
+                        />
                         <TextField
                           margin="normal"
                           required

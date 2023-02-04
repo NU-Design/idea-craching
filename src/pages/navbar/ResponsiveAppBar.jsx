@@ -43,25 +43,22 @@ function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const [username, setUsername] = React.useState("");
+  const [username, setUsername] = React.useState('');
   useEffect(() => {
     const uid = auth.currentUser.uid;
-    console.log("uid", uid);
+    console.log('uid', uid);
 
-const fetchdata = async () => {
-    console.log('in data');
-    const result = await GetUserbyId(uid);
-    console.log(result.username);
-    setUsername(result.username);
-  };
+    const fetchdata = async () => {
+      console.log('in data');
+      const result = await GetUserbyId(uid);
+      console.log(result.username);
+      setUsername(result.username);
+    };
 
-  fetchdata();
+    fetchdata();
 
-  console.log("uusr", username);
-
-  },[]  );
-
-  
+    console.log('uusr', username);
+  }, []);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -87,7 +84,6 @@ const fetchdata = async () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },

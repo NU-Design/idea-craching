@@ -8,9 +8,13 @@ import {
   collection,
 } from 'firebase/firestore';
 
+import { getStorage } from 'firebase/storage';
+
 const firebaseApp = initializeApp(firebaseConfig);
 
 export const db = getFirestore(firebaseApp);
+
+export const storage = getStorage(firebaseApp);
 
 export const connectIdeas = async () => {
   const coll = collection(db, 'ideas');
