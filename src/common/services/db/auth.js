@@ -5,7 +5,13 @@ import {
   signOut,
 } from 'firebase/auth';
 
-import { collection, serverTimestamp, addDoc } from 'firebase/firestore';
+import {
+  // collection,
+  serverTimestamp,
+  // addDoc,
+  setDoc,
+  doc,
+} from 'firebase/firestore';
 
 import { db } from '../../utils/firebase/firebase.util';
 
@@ -16,6 +22,8 @@ export const auth = getAuth();
 export const createUserDocumentFromAuth = async (userAuth, data) => {
   if (!userAuth) return;
 
+  // const ref = doc(collection(db,
+
   data['timestamp'] = serverTimestamp();
   data['user_id'] = userAuth.uid;
   data['email'] = userAuth.email;
@@ -25,7 +33,9 @@ export const createUserDocumentFromAuth = async (userAuth, data) => {
 
   console.log('DATA', data);
   try {
-    const docRef = await addDoc(collection(db, 'users'), data);
+    // const docRef = await addDoc(collection(db, 'users'), data);
+    const docRef = await setDoc(doc(db, 'users', userAuth.uid), data);
+
     return docRef;
   } catch (error) {
     console.log('error creating the user', error.message);
@@ -62,6 +72,7 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   try {
     const result = await signInWithEmailAndPassword(auth, email, password);
+    console.log(result);
     console.log('success signIn');
     return result;
   } catch (error) {
