@@ -5,7 +5,7 @@ function IdeaChain() {
   return (
     <>
       <ResponsiveAppBar />
-      <div>Some Demo Text IdeaChain</div>
+      <div>Some Demo Text IdeaChainfds</div>
     </>
   );
 }

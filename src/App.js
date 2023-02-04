@@ -10,10 +10,11 @@ import Home from './pages/home/home';
 import AboutUs from './pages/about_us';
 import Editor from './pages/editor/hjx/editor';
 import SignIn from './pages/sign_in/combined';
-import Profile from './pages/profile';
 import NotFound from './pages/not_found';
 import HJXTest from './common/services/db/hjxTest';
 import { MarkerSeverity } from 'monaco-editor';
+import Profile from './pages/profile/profile';
+
 
 const App = () => {
   return (
