@@ -45,25 +45,25 @@ const handleSubmit = (event) => {
   };
 
 
-class SignUp extends Component {
-  state = {};
+const SignUp = () => {
+  //state = {};
 
-  
-
-  render() {
     return (
+        <Base>
 
         <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2} columns={16}>
+          <Grid container spacing={2} columns={16} sx={{ height: '100vh' }}>
+          <CssBaseline />
             <Grid item xs={10}>
               <Item>
                 <Box
                   sx={{
+                    
                     display: 'flex',
                     alignItems: 'flex-middle',
                     flexDirection: 'column',
-                    // p: 1,
-                    // m: 1,
+                    p: 1,
+                    m: 1,
                     bgcolor: bg_color,
                     borderRadius: 50,
                   }}
@@ -87,7 +87,9 @@ class SignUp extends Component {
                 </Box>
               </Item>
             </Grid>
+
             {/* `````````````````````````````````````SIGN IN`````````````````````````````````````````````````````` */}
+
             <Grid item xs={6}>
               <Item sx={{
                     display: 'flex',
@@ -178,9 +180,9 @@ class SignUp extends Component {
             </Grid>
           </Grid>
         </Box>
+        </Base>
 
     );
-  }
 }
 
 export default SignUp;

@@ -2,8 +2,9 @@ import ResponsiveAppBar from './pages/navbar/ResponsiveAppBar';
 import { Routes, BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import IdeaChain from './pages/idea_chain/IdeaChain';
-import SignUp from './pages/signup/signUp';
+import SignInSide from './pages/signup/sign_up_fix';
 import Post from './pages/post/post';
+import SignUp from './pages/signup/signUp';
 
 const App = () => {
   return (
