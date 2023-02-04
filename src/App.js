@@ -14,7 +14,7 @@ import NotFound from './pages/not_found';
 import HJXTest from './common/services/db/hjxTest';
 import { MarkerSeverity } from 'monaco-editor';
 import Profile from './pages/profile/profile';
-
+import IdeaCard from './common/components/IdeaCard';
 
 const App = () => {
   return (
@@ -31,6 +31,7 @@ const App = () => {
           <Route path="/sign_up" element={<SignUp />} />
           <Route path="/post_test" element={<Post />} />
           <Route path="/hjx" element={<Editor />} />
+          <Route path="/id_card" element={<IdeaCard />} />
           <Route path="/*" element={<NotFound />} />
           <Route
             path="/md_test"
