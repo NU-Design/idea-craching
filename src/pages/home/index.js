@@ -10,7 +10,6 @@ const Home = () => {
         <div style={{
             display: 'flex',
             justifyContent: 'center',
-            pt:"10px"
         }}>
             <div className="flexbox-container">
                 <div><RecipeReviewCard props={false}/></div>
