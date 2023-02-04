@@ -1,3 +1,4 @@
+import { async } from '@firebase/util';
 import { doc, getDoc, getDocs, collection } from 'firebase/firestore';
 
 import { db } from '../../utils/firebase/firebase.util';
@@ -15,12 +16,32 @@ export const GetAllUser = async () => {
 
 export const GetUserbyId = async (id) => {
   const docRef = doc(db, 'users', id);
-  const docSnap = await getDoc(docRef);
-
-  if (docSnap.exists()) {
-    console.log('Document Data:', docSnap.data());
-  } else {
-    console.log('No such document');
+  try {
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      const result = docSnap.data();
+      console.log('Document Data:', result);
+      return result;
+    } else {
+      console.log('No such document');
+    }
+  } catch (error) {
+    console.log('Error GetUserbyId', error.message);
   }
-  return;
+};
+
+export const GetUserRole = async (id) => {
+  const docRef = doc(db, 'users', id);
+  try {
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      const result = docSnap.data();
+      console.log('GetUserRole Data:', result.role);
+      return result.role;
+    } else {
+      console.log('No such document');
+    }
+  } catch (error) {
+    console.log('Error GetUserbyId', error.message);
+  }
 };
