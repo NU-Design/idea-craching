@@ -1,36 +1,36 @@
 import React from 'react';
 import { Chrono } from 'react-chrono';
 import ResponsiveAppBar from '../navbar/ResponsiveAppBar';
+import MarkdownViewer from '../markdown_viewer/MarkdownViewer';
+
+const LOGO =
+  'https://firebasestorage.googleapis.com/v0/b/idea-crashing.appspot.com/o/logo.png?alt=media&token=9c8cd5a4-792b-4835-aee3-68fa2641acec';
 
 function IdeaChain() {
   const items = [
     {
       title: 'May 1940',
       cardTitle: 'Dunkirk',
-      url: 'https://www.w3schools.com/images/w3schools_green.jpg',
-      cardSubtitle:
-        'Men of the British Expeditionary Force (BEF) wade out to..',
+      url: LOGO,
+      cardSubtitle: 'brief1',
       cardDetailedText:
         'Men of the British Expeditionary Force (BEF) wade out to..Men of the British Expeditionary Force (BEF) wade out to..Men of the British Expeditionary Force (BEF) wade out to..Men of the British Expeditionary Force (BEF) wade out to..Men of the British Expeditionary Force (BEF) wade out to..',
       media: {
         type: 'IMAGE',
         source: {
-          url: 'https://www.w3schools.com/images/w3schools_green.jpg',
+          url: LOGO,
         },
       },
     },
     {
       title: 'May 1950',
       cardTitle: 'DDD',
-      url: 'https://www.w3schools.com/images/w3schools_green.jpg',
-      cardSubtitle:
-        'Men of the British Expeditionary Force (BEF) wade out to..',
-      cardDetailedText:
-        'Men of the British Expeditionary Force (BEF) wade out to..',
+      url: LOGO,
+      cardSubtitle: 'brief2',
       media: {
         type: 'IMAGE',
         source: {
-          url: 'https://www.w3schools.com/images/w3schools_green.jpg',
+          url: LOGO,
         },
       },
     },
@@ -39,12 +39,14 @@ function IdeaChain() {
   return (
     <>
       <ResponsiveAppBar />
-      <div style={{ width: '500px', height: '900px' }}>
+      <div style={{ width: '100%', height: '85vh' }}>
         <Chrono items={items}>
-          <div>
-            <hr />
-            <h3>Title</h3>Just a test card
-          </div>
+          {items.map((item, index) => (
+            <div style={{ width: '100%' }}>
+              <hr />
+              <MarkdownViewer />
+            </div>
+          ))}
         </Chrono>
       </div>
     </>
