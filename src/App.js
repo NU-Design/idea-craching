@@ -1,7 +1,7 @@
 import ResponsiveAppBar from './pages/navbar/ResponsiveAppBar';
 import { Routes, BrowserRouter, Route } from 'react-router-dom';
 
-import IdeaChain from './pages/idea_chain/IdeaChain';
+
 import MarkdownViewer from './pages/markdown_viewer/MarkdownViewer';
 import MonacoEditor from './pages/monaco_editor/MonacoEditor';
 import Post from './pages/post/post';
@@ -18,6 +18,7 @@ import IdeaCard from './common/components/IdeaCard';
 import AboutUs from './pages/about_us/about_us';
 
 import IdeaDetailPage from './pages/IdeaDetailpage';
+import IdeaChain from './pages/idea_chain/ideaChain';
 
 const App = () => {
   return (
