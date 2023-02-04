@@ -48,8 +48,8 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="@testUsername"
+        subheader="comment content"
       />
       <CardMedia
         component="img"
@@ -80,18 +80,11 @@ export default function RecipeReviewCard() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            222
-          </Typography>
           <Typography paragraph>
             333
           </Typography>
           <Typography paragraph>
             444
-          </Typography>
-          <Typography>
-            555
           </Typography>
         </CardContent>
       </Collapse>
