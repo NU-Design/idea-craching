@@ -8,7 +8,7 @@ import Post from './pages/post/post';
 import SignUp from './pages/signup/signUp';
 import Home from './pages/home/home';
 import AboutUs from './pages/about_us';
-import Editor from './pages/editor/index';
+import Editor from './pages/editor/editor';
 import SignIn from './pages/sign_in/combined';
 import Profile from './pages/profile';
 import NotFound from './pages/not_found';
