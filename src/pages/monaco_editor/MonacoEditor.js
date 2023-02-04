@@ -2,22 +2,23 @@ import React, { useState } from 'react';
 
 import Editor from '@monaco-editor/react';
 
-const MonacoEditor = ({ code, theme }) => {
-  const [value, setValue] = useState(code || '');
+const MonacoEditor = (props) => {
+  const [value, setValue] = useState(props.code || '');
 
   const handleEditorChange = (value) => {
     setValue(value);
+    props.setViewCode(value);
   };
 
   return (
     <div className="overlay rounded-md overflow-hidden w-full h-full shadow-4xl">
       <Editor
-        height="85vh"
+        height="90vh"
         width={`100%`}
         language={'markdown'}
         value={value}
-        theme={theme}
-        defaultValue="# Markdown Title"
+        theme={'oceanic-next'}
+        defaultValue=""
         onChange={handleEditorChange}
       />
     </div>

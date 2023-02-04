@@ -8,11 +8,12 @@ import Post from './pages/post/post';
 import SignUp from './pages/signup/signUp';
 import Home from './pages/home/home';
 import AboutUs from './pages/about_us';
-import Editor from './pages/editor/editor';
+import Editor from './pages/editor/hjx/editor';
 import SignIn from './pages/sign_in/combined';
 import Profile from './pages/profile';
 import NotFound from './pages/not_found';
 import HJXTest from './common/services/db/hjxTest';
+import { MarkerSeverity } from 'monaco-editor';
 
 const App = () => {
   return (
@@ -28,8 +29,12 @@ const App = () => {
           <Route path="/profile_test" element={<Profile />} />
           <Route path="/sign_up" element={<SignUp />} />
           <Route path="/post_test" element={<Post />} />
-          <Route path="/hjx" element={<HJXTest />} />
+          <Route path="/hjx" element={<Editor />} />
           <Route path="/*" element={<NotFound />} />
+          <Route
+            path="/md_test"
+            element={<MarkdownViewer markdown="# 123" />}
+          />
         </Routes>
       </BrowserRouter>
     </>
