@@ -8,7 +8,7 @@ class Profile extends Component {
     return (
       <>
         <ResponsiveAppBar />
-        <div>Some Demo Text Profile</div>
+        <div><h1>This is a Profile page. </h1></div>
       </>
     );
   }
