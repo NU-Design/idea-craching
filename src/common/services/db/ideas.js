@@ -1,4 +1,5 @@
 import { db } from '../../utils/firebase/firebase.util';
+import { addIdeaDetail } from './ideaDetails';
 import {
   doc,
   setDoc,
@@ -11,11 +12,6 @@ import {
   addDoc
 } from 'firebase/firestore';
 
-// import { Firestore } from "firebase-admin/firestore";
-
-
-
-
 /**
  * 
  * CRUD
@@ -23,15 +19,51 @@ import {
 */
 
 // Add an idea 
-export const addIdea = async (userAuth, data) => {
+export const addIdea = async (data, ideaContent, userRole) => {
+  // Confirm that the author id is included
+  if (!data.author) {
+    console.error(`Illegal data=${data}`);
+  }
+
+  // Compose JSON for ideaDetail object
+  let collab = {
+    "designer": [],
+    "developer": [],
+    "investor": [],
+    "product_manager": []
+  };
+
+  if (userRole === "designer") {
+    collab["designer"].push(data.author);
+  } else if (userRole === "developer") {
+    collab["developer"].push(data.author);
+  } else if (userRole === "investor") {
+    collab["investor"].push(data.author);
+  } else if (userRole === "product_manager") {
+    collab["product_manager"].push(data.author);
+  } else {
+    console.error(`Invalid userRole=${userRole}`);
+  }
+
+  const ideaDetailData = {
+    content: ideaContent,
+    idea_comments: [],
+    tags: [],
+    collaborators: collab,
+  }
+
+  const ideaDetailRef = await addIdeaDetail(ideaDetailData);
+
+  // Compose and update idea object
   data["timestamp"] = serverTimestamp();
+  data["details"] = ideaDetailRef.id;
 
   const docRef = await addDoc(collection(db, "ideas"), data);
   return docRef;
 };
 
 // Return the idea matching the ideaId
-export const getIdeaByIdeaId = async (ideaId=121) => {
+export const getIdeaByIdeaId = async (ideaId) => {
   const ref = doc(db, "ideas", ideaId);
   const snap = await getDoc(ref);
 
