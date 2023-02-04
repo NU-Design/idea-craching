@@ -20,6 +20,10 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import {
+  createAuthUserWithEmailAndPassword,
+  auth,
+} from '../../common/services/db/auth';
 
 const logo = ConstClass.LOGO;
 const slogan1 = ConstClass.SLOGAN1;
@@ -43,34 +47,48 @@ const Item = styled(Paper)(({ themeBorder }) => ({
 
 const SignUp = () => {
   const [role, setRole] = React.useState('');
+  const [username, setUsername] = React.useState('');
 
   const handleChange = (event) => {
     const temp = event.target.value;
     setRole(temp);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    let additionData = {
+      role: role,
+      username: data.get('username'),
+    };
+    await createAuthUserWithEmailAndPassword(
+      data.get('email'),
+      data.get('password'),
+      // data.get('username'),
+      additionData,
+    );
+
     console.log({
       email: data.get('email'),
       password: data.get('password'),
+      username: data.get('username'),
       confirm_password: data.get('confirm_password'),
       role: role,
     });
 
     const email = data.get('email');
     const password = data.get('password');
-    const confirm_password =  data.get('confirm_password');
-
-
-
-
+    const username = data.get('username');
+    const confirm_password = data.get('confirm_password');
   };
 
   return (
-    <Base>
-      <Box sx={{ flexGrow: 1 }}>
+    <div style={{ marginTop: '15px', backgroundColor: '#FFF8F8' }}>
+      <Box
+        sx={{
+          flexGrow: 1,
+        }}
+      >
         <Grid container spacing={2} columns={16} sx={{ height: '100vh' }}>
           <CssBaseline />
           <Grid item xs={10}>
@@ -159,6 +177,15 @@ const SignUp = () => {
                           margin="normal"
                           required
                           fullWidth
+                          name="username"
+                          label="Username"
+                          type="username"
+                          id="username"
+                        />
+                        <TextField
+                          margin="normal"
+                          required
+                          fullWidth
                           id="email"
                           label="Email Address"
                           name="email"
@@ -208,12 +235,12 @@ const SignUp = () => {
                           variant="contained"
                           sx={{ mt: 3, mb: 2 }}
                         >
-                          Sign In
+                          Sign Up
                         </Button>
 
                         <Grid container>
                           <Grid item>
-                            <Link href="#" variant="body2">
+                            <Link href="/sign_in" variant="body2">
                               {'Already have an account? Sign In'}
                             </Link>
                           </Grid>
@@ -227,7 +254,8 @@ const SignUp = () => {
           </Grid>
         </Grid>
       </Box>
-    </Base>
+             
+    </div>
   );
 };
 
