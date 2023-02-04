@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import { signOutUser } from '../../common/services/db/auth';
 
 const pages = ['HOME', 'IDEA CHAIN', 'ABOUT US'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -203,7 +204,10 @@ function ResponsiveAppBar() {
                           color: 'black',
                           textDecoration: 0,
                         }}
-                        to="/log_out_test"
+                        to="/sign_in"
+                        onClick={async () => {
+                          await signOutUser();
+                        }}
                       >
                         Log Out
                       </Link>
