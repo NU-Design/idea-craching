@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
-import Container from '@mui/material/Container';
 import { Box } from '@mui/system';
 import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
 import FormInput from '../form-input/input.component';
 import Button from '../button/button.component';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-
+import { useNavigate } from 'react-router-dom';
 import './sign-in-form.styles.scss';
+import {
+  signInAuthUserWithEmailAndPassword,
+  signOutUser,
+} from '../../../common/services/db/auth';
 
 const defaultFormFields = {
   email: '',
@@ -19,9 +20,24 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    try {
+      const res = await signInAuthUserWithEmailAndPassword(email, password);
+      console.log(res === 1);
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+
+      if (res === 1) {
+        //跳转
+        navigate('/home');
+      }
+      // await signOutUser();
+      // console.log('sign out');
+    } catch (error) {
+      console.log('user sign in failed', error);
+    }
   };
 
   const handleChange = (event) => {
@@ -90,7 +106,7 @@ const SignInForm = () => {
           </Link>
         </Grid>
         <Grid item>
-          <Link href="#" variant="body2">
+          <Link href="/sign_up" variant="body2">
             {"Don't have an account? Sign Up"}
           </Link>
         </Grid>

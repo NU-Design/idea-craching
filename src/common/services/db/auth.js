@@ -72,12 +72,15 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   try {
     const result = await signInWithEmailAndPassword(auth, email, password);
-    console.log(result);
     console.log('success signIn');
-    return result;
+    return 1;
   } catch (error) {
     console.log('error signInAuthUserWithEmailAndPassword', error.message);
+    return 0;
   }
 };
 
-export const signOutUser = async () => await signOut(auth);
+export const signOutUser = async () => {
+  console.log('log out');
+  await signOut(auth);
+};
