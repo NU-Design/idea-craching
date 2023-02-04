@@ -6,7 +6,7 @@ class Home extends Component {
     return (
       <>
         <ResponsiveAppBar />
-        <h1>this is home page</h1>
+        <h1>This is a Home page</h1>
       </>
     );
   }

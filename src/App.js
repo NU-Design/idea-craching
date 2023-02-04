@@ -7,7 +7,7 @@ import MonacoEditor from './pages/monaco_editor/MonacoEditor';
 import Post from './pages/post/post';
 import SignUp from './pages/signup/signUp';
 import Home from './pages/home/home';
-import AboutUs from './pages/about_us';
+
 import Editor from './pages/editor/hjx/editor';
 import SignIn from './pages/sign_in/combined';
 import NotFound from './pages/not_found';
@@ -15,6 +15,7 @@ import HJXTest from './common/services/db/hjxTest';
 import { MarkerSeverity } from 'monaco-editor';
 import Profile from './pages/profile/profile';
 import IdeaCard from './common/components/IdeaCard';
+import AboutUs from './pages/about_us/about_us';
 
 const App = () => {
   return (
