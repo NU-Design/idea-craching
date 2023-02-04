@@ -18,7 +18,9 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const logo = ConstClass.LOGO;
-const slogan = ConstClass.SLOGAN;
+const slogan1 = ConstClass.SLOGAN1;
+const slogan2 = ConstClass.SLOGAN2;
+const slogan3 = ConstClass.SLOGAN3;
 const slogan_sub1 = ConstClass.SLOGAN_SUB1;
 const slogan_sub2 = ConstClass.SLOGAN_SUB2;
 const bg_color = ConstClass.BG_COLOR;
@@ -26,10 +28,12 @@ const slogan_color = ConstClass.SLOGAN_COLOR;
 const white = ConstClass.WHITE;
 const theme = createTheme();
 
-const Item = styled(Paper)(({ theme }) => ({
+
+const Item = styled(Paper)(({ themeBorder }) => ({
   backgroundColor: bg_color,
   ...theme.typography.body2,
   padding: theme.spacing(1),
+
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
@@ -55,10 +59,14 @@ const SignUp = () => {
           <Grid container spacing={2} columns={16} sx={{ height: '100vh' }}>
           <CssBaseline />
             <Grid item xs={10}>
-              <Item>
+              <Item
+              sx={{
+                
+                boxShadow:0,
+              }}>
                 <Box
                   sx={{
-                    
+                    boxShadow:0,
                     display: 'flex',
                     alignItems: 'flex-middle',
                     flexDirection: 'column',
@@ -68,7 +76,7 @@ const SignUp = () => {
                     borderRadius: 50,
                   }}
                 >
-                  <Item sx={{ width: 'auto' }}>
+                  <Item sx={{ width: 'auto', boxShadow:0}}>
                     <img src={logo} style={{ width: '30%', height: '30%' }} />
                   </Item>
                   <Item
@@ -76,11 +84,16 @@ const SignUp = () => {
                       color: slogan_color,
                       fontWeight: 900,
                       fontSize: '300%',
+                      boxShadow:0,
                     }}
                   >
-                    <div> {slogan}</div>
+                    <div> {slogan1}</div>
+                    <div> {slogan2}</div>
+                    <div> {slogan3}</div>
                   </Item>
-                  <Item>
+                  <Item sx={{
+                      boxShadow:0,
+                    }}>
                     <div> {slogan_sub1}</div>
                     <div> {slogan_sub2}</div>
                   </Item>
