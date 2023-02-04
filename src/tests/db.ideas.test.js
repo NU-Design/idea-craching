@@ -48,7 +48,6 @@ import { connectIdeas, connectIdeas2 } from '../common/utils/firebase/firebase.u
 //   expect(res).not.toBe([]);
 // });
 
-
 ///////////////////////////////////////////////////////////////////////////////
 
 // test("Test 111", async () => {
