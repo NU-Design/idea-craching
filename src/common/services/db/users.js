@@ -31,6 +31,8 @@ export const GetUserbyId = async (id) => {
 };
 
 export const GetUserRole = async (id) => {
+  console.log("user_role: ", id);
+  
   const docRef = doc(db, 'users', id);
   try {
     const docSnap = await getDoc(docRef);

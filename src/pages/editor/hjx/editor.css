@@ -1,0 +1,21 @@
+.notes {
+  color: #5f84ff;
+}
+
+FloatButton {
+  padding: 10px;
+}
+
+Modal {
+  position: fixed;       
+  bottom: 0;
+  left: 50%;
+  width: 30%;
+  height: fit-content;
+  transform: translate(-50%);
+}
+
+
+input {
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-import { getIdeaByIdeaId, getIdeasByUserId, getIdeasByAncestorId, addIdea } from '../common/services/db/ideas';
+import { getIdeaByIdeaId, getIdeasByUserId, getIdeasByAncestorId, addIdea, getAllIdeas, updateIdeaByIdeaId } from '../common/services/db/ideas';
 import { connectIdeas, connectIdeas2 } from '../common/utils/firebase/firebase.util';
 
 // test("Add an idea", async () => {
@@ -34,6 +34,13 @@ import { connectIdeas, connectIdeas2 } from '../common/utils/firebase/firebase.u
 //   expect(res).not.toBe(null);
 // });
 
+// test("Get all ideas", async () => {
+//   const res = await getAllIdeas();
+//   console.log("All Ideas", res);
+//   console.log("Size", res.length);
+//   expect(res).not.toBe(null);
+// });
+
 // test("Get ideas by user_id", async () => {
 //   const userId = "WC5VhHcQYJ4G96OzuoGw";
 //   let res = await getIdeasByUserId(userId);
@@ -47,6 +54,16 @@ import { connectIdeas, connectIdeas2 } from '../common/utils/firebase/firebase.u
 //   console.log("result_3", res);
 //   expect(res).not.toBe([]);
 // });
+
+
+// test("Update Idea", async () => {
+//   const id = "GbRgxe2fmxQmhKpU1svv";
+//   const data = { "likes": 66 };
+//   let res = await updateIdeaByIdeaId(id, data);
+//   console.log("result_4", res);
+//   expect(res).not.toBe([]);
+// });
+
 
 ///////////////////////////////////////////////////////////////////////////////
 

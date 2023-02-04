@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import Base from '../base_outline/base';
 import ResponsiveAppBar from '../navbar/ResponsiveAppBar';
-
-class Post extends Component {
+class IdeaChain extends Component {
   state = {};
   render() {
     return (
       <>
         <ResponsiveAppBar />
-        <div>Some Demo Text Post</div>
+        <h1>this is home page</h1>
       </>
     );
   }
 }
 
-export default Post;
+export default IdeaChain;
