@@ -43,13 +43,13 @@ const IdeaCard = () => (
           <Row>
             <Col span={4}>
               <Avatar
-                size={64}
+                size={54}
                 icon={<UserOutlined size="large" />}
                 src="https://firebasestorage.googleapis.com/v0/b/idea-crashing.appspot.com/o/1_1.png?alt=media&token=0a8c483d-3b09-4d6b-93cd-e8a0359fd4e7"
               />
             </Col>
             <Col span={18}>
-              <Title level={5}> @{data.username} shared an idea post!!</Title>
+              <Title level={5}> @{data.username} shared an idea</Title>
             </Col>
           </Row>
         </Header>
@@ -65,7 +65,7 @@ const IdeaCard = () => (
               <LikeOutlined />
             </Col>
             <Col span={22} pull={2}>
-              <Meta title="Dream Scape" description="Visual Escapism" />
+              <Meta title="Dream Scape" description="" />
             </Col>
           </Row>
         </Footer>
