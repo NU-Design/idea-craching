@@ -1,49 +1,20 @@
-import ReactMarkDownDemo from "./common/components/react_mark_down_demo";
+import ResponsiveAppBar from './pages/ResponsiveAppBar';
+import { Routes, BrowserRouter, Route } from 'react-router-dom';
+import Home from './pages/home/Home';
+import IdeaChain from './pages/idea_chain/IdeaChain';
 
 const App = () => {
-
-
   return (
-    <div className="ideaboxes-container ">
-      <div className="ideabox-container">
-        <div className="ideabox-body-container">
-          {/*<img />*/}
-          <div className="ideabox-container">
-            <h2> title </h2>
-            <p>descreption</p>
-          </div>
-        </div>
-      </div>
-      <div className="ideabox-container">
-        <div className="ideabox-body-container">
-          {/*<img />*/}
-          <div className="ideabox-container">
-            <h2> title </h2>
-            <p>descreption</p>
-          </div>
-        </div>
-      </div>
-      <div className="ideabox-container">
-        <div className="ideabox-body-container">
-          {/*<img />*/}
-          <div className="ideabox-container">
-            <h2> title </h2>
-            <p>descreption</p>
-          </div>
-        </div>
-      </div>
-      <div className="ideabox-container">
-        <div className="ideabox-body-container">
-          {/*<img />*/}
-          <div className="ideabox-container">
-            <h2> title </h2>
-            <p>descreption</p>
-          </div>
-        </div>
-      </div>
-      <ReactMarkDownDemo />
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ideachain_test" element={<IdeaChain />} />
+          <Route path="/responsivebar_test" element={<ResponsiveAppBar />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
-}
+};
 
 export default App;
