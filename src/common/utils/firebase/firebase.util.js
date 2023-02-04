@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-
+import * as dotenv from 'dotenv';
 import {
   getFirestore,
   doc,
@@ -8,14 +8,16 @@ import {
   collection,
 } from 'firebase/firestore';
 
+dotenv.config();
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyCunp1d90LucZ_bNKd4HCg-fD729Aj1SFU',
-  authDomain: 'idea-crashing.firebaseapp.com',
-  projectId: 'idea-crashing',
-  storageBucket: 'idea-crashing.appspot.com',
-  messagingSenderId: '477375860047',
-  appId: '1:477375860047:web:b139ac3eda73d5cecfc93a',
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
