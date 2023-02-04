@@ -8,6 +8,7 @@ import {
   where,
   query,
   addDoc,
+  updateDoc,
 } from 'firebase/firestore';
 
 export const addIdeaDetail = async (data) => {
@@ -28,8 +29,4 @@ export const getIdeaDetailByIdeaId = async (ideaDetailId) => {
   }
 }
 
-// TODO:
-export const updateIdeaDetailByIdeaId = async (data) => {
-  return 0;
-}
-
+// db.collection("users").doc(doc.id).update({foo: "bar"});
