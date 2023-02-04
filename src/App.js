@@ -12,13 +12,14 @@ import Editor from './pages/editor/index';
 import SignIn from './pages/sign_in/combined';
 import Profile from './pages/profile';
 import NotFound from './pages/not_found';
+import HJXTest from './common/services/db/hjxTest';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/idea_chain_test" element={<IdeaChain />} />
           <Route path="/about_us_test" element={<AboutUs />} />
           <Route path="/editor_test" element={<Editor />} />
@@ -27,11 +28,12 @@ const App = () => {
           <Route path="/profile_test" element={<Profile />} />
           <Route path="/sign_up_test" element={<SignUp />} />
           <Route path="/post_test" element={<Post />} />
+          <Route path="/hjx" element={<HJXTest />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
   );
 };
 
- 
 export default App;

@@ -12,9 +12,20 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['HOME', 'IDEA CHAIN', 'ABOUT US'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -48,17 +59,23 @@ function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              // fontFamily: 'monospace',
+              fontWeight: 500,
+              // letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Idea Crashing
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              alignItems: 'flex-end',
+              display: { xs: 'flex', md: 'none' },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -99,7 +116,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -111,18 +128,27 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Idea Crashing
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Link
+              style={{ color: 'white', textDecoration: 0, paddingLeft: '20px' }}
+              to="/home_test"
+            >
+              HOME
+            </Link>
+            <Link
+              style={{ color: 'white', textDecoration: 0, paddingLeft: '20px' }}
+              to="/idea_chain_test"
+            >
+              IDEA CHAIN
+            </Link>
+            <Link
+              style={{ color: 'white', textDecoration: 0, paddingLeft: '20px' }}
+              to="/about_us_test"
+            >
+              ABOUT US
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -147,11 +173,50 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={2}>
+                  <Grid item xs={10}>
+                    <Item
+                      sx={{
+                        boxShadow: 0,
+                      }}
+                    >
+                      <Link
+                        style={{
+                          color: 'black',
+                          textDecoration: 0,
+                        }}
+                        to="/profile_test"
+                      >
+                        Profile
+                      </Link>
+                    </Item>
+                  </Grid>
+                  <Grid item xs={10}>
+                    <Item
+                      sx={{
+                        boxShadow: 0,
+                      }}
+                    >
+                      <Link
+                        style={{
+                          color: 'black',
+                          textDecoration: 0,
+                        }}
+                        to="/log_out_test"
+                      >
+                        Log Out
+                      </Link>
+                    </Item>
+                  </Grid>
+                </Grid>
+              </Box>
+
+              {/* {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
             </Menu>
           </Box>
         </Toolbar>
