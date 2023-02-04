@@ -31,7 +31,7 @@ const App = () => {
           <Route path="/sign_up" element={<SignUp />} />
           <Route path="/post_test" element={<Post />} />
           <Route path="/hjx" element={<Editor />} />
-          <Route path="/*" element={<NotFound />} />
+          <Route path="/*" element={<SignIn />} />
           <Route
             path="/md_test"
             element={<MarkdownViewer markdown="# 123" />}
