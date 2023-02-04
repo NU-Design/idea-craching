@@ -1,7 +1,13 @@
 import React from 'react';
+import ResponsiveAppBar from '../navbar/ResponsiveAppBar';
 
 function IdeaChain() {
-  return <div>Some Demo Text IdeaChain</div>;
+  return (
+    <>
+      <ResponsiveAppBar />
+      <div>Some Demo Text IdeaChain</div>
+    </>
+  );
 }
 
 export default IdeaChain;

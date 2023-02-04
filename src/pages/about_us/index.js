@@ -1,5 +1,11 @@
+import ResponsiveAppBar from "../navbar/ResponsiveAppBar";
+
 const AboutUs = () => {
-  return <div>Hello! Here is the AboutUs!</div>;
-};
+    return (
+        <>
+          <ResponsiveAppBar />
+          <div>Some Demo Text About US</div>
+        </>
+      );};
 
 export default AboutUs;

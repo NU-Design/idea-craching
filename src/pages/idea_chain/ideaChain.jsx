@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ResponsiveAppBar from '../navbar/ResponsiveAppBar';
-class Home extends Component {
+class IdeaChain extends Component {
   state = {};
   render() {
     return (
@@ -12,4 +12,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default IdeaChain;

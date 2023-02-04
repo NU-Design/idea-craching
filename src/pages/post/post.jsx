@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import Base from '../base_outline/base';
+import ResponsiveAppBar from '../navbar/ResponsiveAppBar';
 
 class Post extends Component {
     state = {  } 
     render() { 
         return (
-            <Base>
-                <h1>hello</h1>
-            </Base>
-        );
+            <>
+              <ResponsiveAppBar />
+              <div>Some Demo Text IdeaChain</div>
+            </>
+          );
     }
 }
  

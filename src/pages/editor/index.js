@@ -1,5 +1,11 @@
+import ResponsiveAppBar from "../navbar/ResponsiveAppBar";
+
 const Editor = () => {
-  return <div>Hello! Here is the Editor!</div>;
-};
+    return (
+        <>
+          <ResponsiveAppBar />
+          <div>Some Demo Text Editor</div>
+        </>
+      );};
 
 export default Editor;
