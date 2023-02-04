@@ -1,36 +1,33 @@
 import { db } from '../../utils/firebase/firebase.util';
-
 import {
   doc,
+  setDoc,
   getDoc,
   getDocs,
   collection,
   where,
   query,
+  serverTimestamp,
+  addDoc
 } from 'firebase/firestore';
 
-// CRUD
+// import { Firestore } from "firebase-admin/firestore";
+
+
+
+
+/**
+ * 
+ * CRUD
+ * 
+*/
+
 // Add an idea 
-export const addIdea = async (userAuth, ) => {
-  return null;
-};
+export const addIdea = async (userAuth, data) => {
+  data["timestamp"] = serverTimestamp();
 
-// Return all ideas created by a user
-export const getIdeasByUserId = async (userId) => {  
-  const q = query(collection(db, 'ideas'), where('user_id', '==', userId));
-  const querySnapshot = await getDocs(q);
-
-  let cnt = 0;
-  let ret = [];
-  querySnapshot.forEach((doc) => {
-    // console.log(doc.id, ' => ', doc.data());
-    console.log(doc.id);
-    ret.push(doc.data());
-    cnt += 1;
-  });
-
-  console.log(`getIdeasByUserId -> count=${cnt}`);
-  return ret;
+  const docRef = await addDoc(collection(db, "ideas"), data);
+  return docRef;
 };
 
 // Return the idea matching the ideaId
@@ -48,15 +45,31 @@ export const getIdeaByIdeaId = async (ideaId=121) => {
   }
 };
 
-// Return the ideas sharing the same ancestorId
-export const getIdeasByAncestorId = async(ancestorId) => {
-  const q = query(collection(db, 'ideas'), where('user_id', '==', ancestorId));
+// Return all ideas created by a user
+export const getIdeasByUserId = async (userId) => {  
+  const q = query(collection(db, 'ideas'), where('user_id', '==', userId));
   const querySnapshot = await getDocs(q);
 
   let cnt = 0;
   let ret = [];
   querySnapshot.forEach((doc) => {
-    // console.log(doc.id, ' => ', doc.data());
+    console.log(doc.id);
+    ret.push(doc.data());
+    cnt += 1;
+  });
+
+  console.log(`getIdeasByUserId -> count=${cnt}`);
+  return ret;
+};
+
+// Return the ideas sharing the same ancestorId
+export const getIdeasByAncestorId = async(ancestorId) => {
+  const q = query(collection(db, 'ideas'), where('ancestor', '==', ancestorId));
+  const querySnapshot = await getDocs(q);
+
+  let cnt = 0;
+  let ret = [];
+  querySnapshot.forEach((doc) => {
     console.log(doc.id);
     ret.push(doc.data());
     cnt += 1;
