@@ -17,7 +17,7 @@ const itemsDemo = [
     media: {
       type: 'IMAGE',
       source: {
-        url: 'https://firebasestorage.googleapis.com/v0/b/idea-crashing.appspot.com/o/1.png?alt=media&token=615ed95b-1e0d-4f84-ade5-87f94aa9ba27',
+        url: 'https://firebasestorage.googleapis.com/v0/b/idea-crashing.appspot.com/o/20151016045329690.jpg.source.jpg?alt=media&token=0a355673-b0e1-4879-ae24-147223133210',
       },
     },
     mdText: `# We need to grab early market shares.
