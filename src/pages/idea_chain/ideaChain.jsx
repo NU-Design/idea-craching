@@ -17,7 +17,7 @@ const itemsDemo = [
     media: {
       type: 'IMAGE',
       source: {
-        url: LOGO,
+        url: 'https://firebasestorage.googleapis.com/v0/b/idea-crashing.appspot.com/o/1.png?alt=media&token=615ed95b-1e0d-4f84-ade5-87f94aa9ba27',
       },
     },
     mdText: `# We need to grab early market shares.
@@ -37,11 +37,10 @@ Time is money.
     media: {
       type: 'IMAGE',
       source: {
-        url: LOGO,
+        url: 'https://firebasestorage.googleapis.com/v0/b/idea-crashing.appspot.com/o/3.png?alt=media&token=d6e87ccc-8e06-4f6e-b4b7-9aa46812afe0',
       },
     },
-    mdText:
-      `# Here are some of the competitors:
+    mdText: `# Here are some of the competitors:
 - Github Copilot
 - Tabnine
 - Captain Stack
