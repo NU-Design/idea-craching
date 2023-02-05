@@ -10,10 +10,10 @@ const LOGO =
 const itemsDemo = [
   {
     title: 'Jan 1st 2023',
-    cardTitle: 'AI coder',
+    cardTitle: 'Officially started building a website',
     url: LOGO,
     cardSubtitle:
-      'Copilot is getting popular. We should make our own AI coding tool. ',
+      'Set up a financial new website that uses crawlers to obtainsfinancial related news from multiple websties ',
     media: {
       type: 'IMAGE',
       source: {
@@ -31,7 +31,8 @@ Time is money.
   },
   {
     title: 'Jan 24ed 2023',
-    cardTitle: 'Similar products',
+    cardTitle:
+      'Using Sentimental analysis of reviews through machine learning will be good idea',
     url: LOGO,
     cardSubtitle: 'I collected some existent similar apps that is out.',
     media: {
